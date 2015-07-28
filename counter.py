@@ -30,7 +30,7 @@ def counter(name):
     except:
         print("File error")
 
-    return sorted(collections.Counter(list).items())
+    return sorted(collections.Counter(list).items(), key=lambda tup: tup[1], reverse=True)
 
 
 def writer(name, txt):
@@ -45,9 +45,9 @@ def writer(name, txt):
         f.close()
 
 
-def cruncher(list):
+def cruncher(list1):
     out = ""
-    for item in list:
+    for item in list1:
         try:
             char = item[0].split()
             if len(char) != 0:
