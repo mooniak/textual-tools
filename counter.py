@@ -28,7 +28,17 @@ def counter(name):
     except IOError:
         print("File read error")
     except:
-        print("File error")
+        try:
+            if os.path.isdir(name):
+                fileList = os.listdir(name)
+                for file in fileList:
+                    f = open(name + "/" + file, encoding='utf-16')
+                    reader(f)
+            else:
+                f = open(name, encoding='utf-16')
+                reader(f)
+        except:
+            print("File error")
 
     return sorted(collections.Counter(list).items(), key=lambda tup: tup[1], reverse=True)
 
