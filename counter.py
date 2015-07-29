@@ -53,6 +53,7 @@ def cruncher(list):
             if len(char) != 0:
                 s = char[0]
                 codep = s.encode("unicode_escape")
+                codep=str(codep)[1:].replace('\\','').strip("'")
                 print(str(codep) + " " + str(item[1]) + " " + str(
                     round(item[1] / charCountNoWhiteSpace * 100, 3)) + "%")
                 out += "<tr><td class='c'>"+s + "</td><td class='u'>" + str(codep) + "</td><td class='u'>" + str(item[1]) + "</td><td class='u'>" + str(
