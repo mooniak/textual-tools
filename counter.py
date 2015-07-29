@@ -89,3 +89,5 @@ else:
         charCountNoWhiteSpace))
     if len(names) > 2:
         writer(names[2], printHTML(names[2], names[1], txtOut))
+    else:
+        writer("report.html", printHTML("report.html", names[1], txtOut))
