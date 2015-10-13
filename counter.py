@@ -20,25 +20,24 @@ def counter(name):
         if os.path.isdir(name):
             fileList = os.listdir(name)
             for file in fileList:
-                f = open(name + "/" + file, encoding='utf-8')
-                reader(f)
+                try:
+                    f = open(name + "/" + file, encoding='utf-8')
+                    reader(f)
+                except:
+                    f = open(name + "/" + file, encoding='utf-16')
+                    reader(f)
         else:
-            f = open(name, encoding='utf-8')
-            reader(f)
+            try:
+                f = open(name, encoding='utf-8')
+                reader(f)
+            except:
+                f = open(name, encoding='utf-16')
+                reader(f)
     except IOError:
         print("File read error")
     except:
-        try:
-            if os.path.isdir(name):
-                fileList = os.listdir(name)
-                for file in fileList:
-                    f = open(name + "/" + file, encoding='utf-16')
-                    reader(f)
-            else:
-                f = open(name, encoding='utf-16')
-                reader(f)
-        except:
-            print("File error")
+        print("File error")
+    print(list)
 
     return sorted(collections.Counter(list).items(), key=lambda tup: tup[1], reverse=True)
 
