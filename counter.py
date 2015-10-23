@@ -5,6 +5,7 @@ charCountNoWhiteSpace = 0
 ledgerSingle={}
 ledgerDouble={}
 ledgerTriple={}
+punctuation=[' ',',','"','\'','.','?','!','/',':','-','%','<','>','(',')','`']
 
 def counter(openfile):
     global charCount, charCountNoWhiteSpace
@@ -20,16 +21,18 @@ def counter(openfile):
                 ledgerSingle[char]+=1
             else:
                 ledgerSingle[char]=1
+                if now not in punctuation:
+                    print(now)
 
             if not before==None:
-                if now.isalnum() and before.isalnum() and earlier.isalnum():
+                if now not in punctuation and before not in punctuation:
                     if before+now in ledgerDouble:
                         ledgerDouble[before+now]+=1
                     else:
                         ledgerDouble[now+before]=1
 
             if (not earlier==None) and (not before==None):
-                if now.isalnum() and before.isalnum() and earlier.isalnum():
+                if now not in punctuation and before not in punctuation and earlier not in punctuation:
                     if earlier+before+now in ledgerTriple:
                         ledgerTriple[earlier+before+now]+=1
                     else:
@@ -45,7 +48,7 @@ def reader(name):
         if os.path.isdir(name):
             fileList = os.listdir(name)
             for file in fileList:
-                print(file)
+                # print(file)
                 try:
                     f = open(name + "/" + file, encoding='utf-8')
                     counter(f)
