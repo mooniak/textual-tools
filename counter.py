@@ -1,3 +1,19 @@
+#
+# counter.py
+#
+# Copyright (c) 2015,
+# Mooniak <hello@mooniak.com>
+# Ayantha Randika <paarandika@gmail.com>
+# Improvements: https://github.com/mooniak/Frequency-Counter
+# Released under the GNU General Public License version 3 or later.
+# See accompanying LICENSE file for details.
+#
+# This is a simple Python script to count unicode character frequencies and percentages of a text file. 
+# This will genrate a simple html file with the report.
+# 
+# HOWTO $python3 counter <input file or folder> <log file (optional)>
+
+
 import collections, sys, unicodedata, os
 
 charCount = 0
