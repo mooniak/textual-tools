@@ -1,5 +1,5 @@
 #
-# counter.py
+# counter.py v1.0.0
 #
 # Copyright (c) 2015,
 # Mooniak <hello@mooniak.com>
