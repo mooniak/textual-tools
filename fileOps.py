@@ -1,4 +1,3 @@
-
 def writer(name, txt):
     try:
         f = open(name, 'w', encoding='utf-8')
