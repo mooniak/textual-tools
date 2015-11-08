@@ -1,7 +1,12 @@
 from html.parser import HTMLParser
 
 class HTMLDataParser(HTMLParser):
-    pass
+    def __init__(self):
+        HTMLParser.__init__(self)
+        self.page=""
+    def handle_data(self, data):
+        if not self.lasttag=="script" and not self.lasttag=="style":
+            self.page+=data+"\n"
 
 class HTMLUrlParser(HTMLParser):
     def __init__(self):

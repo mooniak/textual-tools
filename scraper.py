@@ -1,6 +1,7 @@
-from hparser import HTMLUrlParser
+from hparser import HTMLUrlParser, HTMLDataParser
 from urllib.parse import urlparse, urljoin
 from urllib.request import Request, urlopen
+from fileOps import writer
 
 class UrlObj:
     def __init__(self, url, level):
@@ -55,6 +56,9 @@ def scrape (url, levels, folder):
         temp=index.pop()
         page=get_page(temp.url)
         if not page=="":
+            p=HTMLDataParser()
+            p.feed(page)
+            writer(file_name+"_"+temp.level+"_"+ticket, page)
             if temp.level<levels:
                 index=index+url_extractor(url, page, temp.level+1)
 
