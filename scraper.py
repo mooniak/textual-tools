@@ -2,6 +2,7 @@ from hparser import HTMLUrlParser, HTMLDataParser
 from urllib.parse import urlparse, urljoin
 from urllib.request import Request, urlopen
 from fileOps import writer
+import os
 
 class UrlObj:
     def __init__(self, url, level):
@@ -22,7 +23,6 @@ def url_extractor(url, page, level):
         turl=urljoin(url, turl)
         parsed_turl = urlparse(turl)
         parsed_base=urlparse(url_keeper[0])
-        print(turl)
         if turl not in url_keeper and parsed_turl.netloc==parsed_base.netloc:
             url_keeper.append(turl)
             temp=UrlObj(turl, level)
@@ -30,11 +30,11 @@ def url_extractor(url, page, level):
     return out
 
 def get_page(url):
-    print(url)
     try:
         req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        webpage = str(urlopen(req).read())
-        return webpage
+        response = urlopen(req)
+        encoding=response.headers.get_content_charset()
+        return response.read().decode(encoding)
     except:
         print("Could not get "+url)
         return ""
@@ -42,8 +42,10 @@ def get_page(url):
 def content_extractor():
     pass
 
-def scrape (url, levels, folder):
+def scrape (url, levels, folder=None):
     global url_keeper
+    if folder==None:
+        folder=os.getcwd()
     parsed_uri = urlparse(url)
     file_name=folder+"/"+parsed_uri.netloc
     url_keeper=[]
@@ -58,8 +60,9 @@ def scrape (url, levels, folder):
         if not page=="":
             p=HTMLDataParser()
             p.feed(page)
-            writer(file_name+"_"+temp.level+"_"+ticket, page)
+            writer(file_name+"_"+str(temp.level)+"_"+str(ticket)+".txt", p.page)
             if temp.level<levels:
                 index=index+url_extractor(url, page, temp.level+1)
 
 
+scrape("http://mooniak.com/ayanna-font/tests/",2)

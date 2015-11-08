@@ -8,4 +8,7 @@ def writer(name, txt):
     except:
         print("File error")
     finally:
-        f.close()
+        try:
+            f.close()
+        except:
+            pass

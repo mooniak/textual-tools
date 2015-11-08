@@ -6,7 +6,9 @@ class HTMLDataParser(HTMLParser):
         self.page=""
     def handle_data(self, data):
         if not self.lasttag=="script" and not self.lasttag=="style":
-            self.page+=data+"\n"
+            data=str(data).strip()
+            if not data=='\n' and not data=="b'":
+                self.page+=data+"\n"
 
 class HTMLUrlParser(HTMLParser):
     def __init__(self):
