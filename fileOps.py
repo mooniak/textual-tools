@@ -1,3 +1,5 @@
+import os
+
 def writer(name, txt):
     try:
         f = open(name, 'w', encoding='utf-8')
@@ -11,3 +13,10 @@ def writer(name, txt):
             f.close()
         except:
             pass
+
+def folder_reader(name):
+    if os.path.isdir(name):
+        fileList = os.listdir(name)
+        return fileList
+    else:
+        return None

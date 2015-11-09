@@ -73,6 +73,4 @@ def scrape(url, levels, folder=None):
             writer(file_name + "_" + str(temp.level) + "_" + str(ticket) + ".txt", p.page)
             if temp.level < levels:
                 index = index + url_extractor(url, page, temp.level + 1)
-
-
-scrape("http://mooniak.com/ayanna-font/tests/", 2)
+    return folder

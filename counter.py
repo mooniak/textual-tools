@@ -20,6 +20,7 @@ class Counter:
         self.ledgerDouble = {}
         self.ledgerTriple = {}
         self.unicodeRange = unicodeRange
+        self.name=""
 
     def count_characters(self, openfile):
         now = None
@@ -34,8 +35,6 @@ class Counter:
                     self.ledgerSingle[char] += 1
                 else:
                     self.ledgerSingle[char] = 1
-                    if now not in self.punctuation:
-                        print(now)
 
                 if not before == None:
                     if now not in self.punctuation and before not in self.punctuation:
@@ -57,27 +56,12 @@ class Counter:
 
     def count(self, name):
         try:
-            if os.path.isdir(name):
-                fileList = os.listdir(name)
-                for file in fileList:
-                    # print(file)
-                    try:
-                        f = open(name + "/" + file, encoding='utf-8')
-                        self.count_characters(f)
-                    except UnicodeDecodeError:
-                        f = open(name + "/" + file, encoding='utf-16')
-                        self.count_characters(f)
-                    finally:
-                        f.close()
-            else:
-                try:
-                    f = open(name, encoding='utf-8')
-                    self.count_characters(f)
-                except UnicodeDecodeError:
-                    f = open(name, encoding='utf-16')
-                    self.count_characters(f)
-                finally:
-                    f.close()
-        except IOError:
+            openfile = open(name, encoding='utf-8')
+            self.count_characters(openfile)
+        except UnicodeDecodeError:
+            openfile = open(name, encoding='utf-16')
+            self.count_characters(openfile)
+        except:
             print("File read error")
+            return -1
 
