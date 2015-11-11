@@ -7,7 +7,6 @@
 # Improvements: https://github.com/mooniak/Frequency-Counter
 # Released under the GNU General Public License version 3 or later.
 # See accompanying LICENSE file for details.
-import os
 
 
 class Counter:
@@ -20,7 +19,7 @@ class Counter:
         self.ledgerDouble = {}
         self.ledgerTriple = {}
         self.unicodeRange = unicodeRange
-        self.name=""
+        self.name = ""
 
     def count_characters(self, openfile):
         now = None
@@ -64,4 +63,3 @@ class Counter:
         except:
             print("File read error")
             return -1
-
