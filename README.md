@@ -10,15 +10,27 @@ Script can analyze a website or text files stored locally in your computer. File
 This will generate a `json` file and a html representation of analysis.
 
 ```
-python3 main.py [-l/-w][URL / folder or file][levels only if a URL, optional][output file, optional]
+cd textual-tools/ ;
 ```
 
-- l for local
-- w for web
+```
+python3 main.py [-l/-w][URL / folder or file][levels only if a URL, optional][output file, optional]
+
+```
+
+- `-l`for local
+- `-w` for web
 
 
+Example
 
-##More Tools
+```
+python3 main.py -w http://mooniak.com/ 3 ;
+
+```
+
+
+##More useful tools
 
 - Text Manipulation with command line tools (http://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)
 - Convert `.doc` files to `.txt`: https://github.com/tobya/DocTo
