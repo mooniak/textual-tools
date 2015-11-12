@@ -15,6 +15,7 @@ class Counter:
     def __init__(self, unicodeRange=0):
         self.charCount = 0
         self.charCountNoWhiteSpace = 0
+        self.wordCount=0
         self.ledgerSingle = {}
         self.ledgerDouble = {}
         self.ledgerTriple = {}
@@ -52,6 +53,8 @@ class Counter:
                 self.charCount += 1
                 if not char.isspace():
                     self.charCountNoWhiteSpace += 1
+                if char==" ":
+                    self.wordCount+=1
 
     def count(self, name):
         try:
