@@ -39,20 +39,26 @@ def main():
         if len(sys.argv) <= 2:
             print("Invalid Location")
         else:
+            print("Starting analysis...")
             if len(sys.argv) > 3:
                 local_count(sys.argv[2], sys.argv[3])
+                print("Done..!")
             else:
                 local_count(sys.argv[2])
+                print("Done..!")
     elif len(sys.argv) > 1 and sys.argv[1] == "-w":
         if len(sys.argv) <= 2:
             print("Invalid Location")
         else:
+            print("Starting analysis...")
             if len(sys.argv) == 3:
                 web_count(sys.argv[2], 1)
+                print("Done..!")
             elif len(sys.argv) == 4:
                 try:
                     level = int(sys.argv[3])
                     web_count(sys.argv[2], level)
+                    print("Done..!")
                 except ValueError:
                     print("Number of levels must be a integer")
                     return
@@ -61,6 +67,7 @@ def main():
                     try:
                         level = int(sys.argv[3])
                         web_count(sys.argv[2], level, sys.argv[5])
+                        print("Done..!")
                     except ValueError:
                         print("Number of levels must be a integer")
                         return
