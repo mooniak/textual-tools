@@ -4,7 +4,7 @@ import json
 from fileOps import *
 from counter import *
 from scraper import scrape
-
+from jsonFormulate import json_formulate
 
 def local_count(name, out=os.getcwd() + "/report.JSON"):
     file_list = folder_reader(name)
@@ -16,7 +16,7 @@ def local_count(name, out=os.getcwd() + "/report.JSON"):
     else:
         for file in file_list:
             count.count(name + "/" + file)
-    writer(out, json.dumps(count.__dict__, ensure_ascii=False))
+    writer(out, json_formulate(count))
 
 
 def web_count(name, levels, out=None):
@@ -31,7 +31,7 @@ def web_count(name, levels, out=None):
             count.count(folder + "/" + file)
     if out == None:
         out = os.getcwd()
-    writer(out + "/report.JSON", json.dumps(count.__dict__, ensure_ascii=False))
+    writer(out + "/report.JSON", json_formulate(count))
 
 
 def main():
