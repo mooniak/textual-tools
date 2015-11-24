@@ -1,12 +1,36 @@
 #single .ct-series-a .ct-bar {
-  stroke: red;
+    stroke: red;
 }
+
 #double .ct-series-a .ct-bar {
     stroke: blue;
 }
+
 #triple .ct-series-a .ct-bar {
     stroke: purple;
 }
-#container{
-    width: 80%;
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+#navigation {
+    position: fixed;
+    width: 80vw;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding-left: 55px;
+    padding-top: 10px;
+z-index: 100;
+}
+#navigation a {
+z-index: 100;
+}
+
+section {
+    margin-top: 50px;
+    padding: 50px;
+    z-index: 90;
 }
