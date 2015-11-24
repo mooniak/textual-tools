@@ -41,15 +41,15 @@ function textReport(data){
     ledgerTripleLables=[]
     ledgerTripleVals=[]
     $.each(data.ledgerSingle, function(key, load){
-        ledgerSingleVals.push(load);
-        ledgerSingleLables.push(key);
+        ledgerSingleVals.push(load.count);
+        ledgerSingleLables.push(load.character);
     });
     $.each(data.ledgerDouble, function(key, load){
-        ledgerDoubleVals.push(load);
-        ledgerDoubleLables.push(key);
+        ledgerDoubleVals.push(load.count);
+        ledgerDoubleLables.push(load.character);
     });
     $.each(data.ledgerTriple, function(key, load){
-        ledgerTripleVals.push(load);
-        ledgerTripleLables.push(key);
+        ledgerTripleVals.push(load.count);
+        ledgerTripleLables.push(load.character);
     });
 }
