@@ -22,7 +22,7 @@ class Counter:
         self.unicodeRange = unicodeRange
         self.name = ""
 
-    def count_characters(self, openfile):
+    def _count_characters(self, openfile):
         now = None
         before = None
         earlier = None
@@ -59,10 +59,10 @@ class Counter:
     def count(self, name):
         try:
             openfile = open(name, encoding='utf-8')
-            self.count_characters(openfile)
+            self._count_characters(openfile)
         except UnicodeDecodeError:
             openfile = open(name, encoding='utf-16')
-            self.count_characters(openfile)
+            self._count_characters(openfile)
         except:
             print("File read error")
             return -1
