@@ -1,0 +1,12 @@
+#single .ct-series-a .ct-bar {
+  stroke: red;
+}
+#double .ct-series-a .ct-bar {
+    stroke: blue;
+}
+#triple .ct-series-a .ct-bar {
+    stroke: purple;
+}
+#container{
+    width: 80%;
+}
