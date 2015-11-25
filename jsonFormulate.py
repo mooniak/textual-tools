@@ -27,4 +27,4 @@ def json_formulate(counter):
     out['ledgerDouble'] = ledgerDouble
     out['ledgerTriple'] = ledgerTriple
 
-    return json.dumps(out, ensure_ascii=False)
+    return "textReport("+json.dumps(out, ensure_ascii=False)+")"
