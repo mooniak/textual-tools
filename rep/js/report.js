@@ -23,8 +23,12 @@
         return out
     }
 
-
-
+    $('#charachters').html("Charachters : "+charCount);
+    $('#charachters_s').html("Charachters without white spaces : "+charCountNoWhiteSpace);
+    $('#words').html("words : "+wordCount);
+    $('#range').html("range : "+unicodeRange);
+    $('#source').html("source : <a href="+source+"'>"+source+"</a>");
+    $('#files').html("files :  <a href="+name+"'>"+name+"</a>");
     $('#single').css('height',ledgerSingleLables.length*20);
     $('#double').css('height',ledgerDoubleLables.length*20);
     $('#triple').css('height',ledgerTripleLables.length*20);
@@ -52,4 +56,10 @@ function textReport(data){
         ledgerTripleVals.push(load.count);
         ledgerTripleLables.push(load.character);
     });
+    charCount=data.charCount;
+    charCountNoWhiteSpace=data.charCountNoWhiteSpace;
+    wordCount=data.wordCount;
+    unicodeRange=data.unicodeRange;
+    name=data.name;
+    source=data.source;
 }
