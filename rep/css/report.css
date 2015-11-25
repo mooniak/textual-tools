@@ -11,7 +11,7 @@
 }
 
 .container {
-    width: 80vw;
+    width: 100vw;
     margin: 0 auto;
 }
 
@@ -33,4 +33,15 @@ section {
     margin-top: 50px;
     padding: 50px;
     z-index: 90;
+}
+
+.ct-series-a .ct-bar {
+  /* Colour of your bars */
+  stroke: red;
+  /* The width of your bars */
+  stroke-width: 6px;
+  /* Yes! Dashed bars! */
+  stroke-dasharray: 0px;
+  /* Maybe you like round corners on your bars? */
+  stroke-linecap: round;
 }
