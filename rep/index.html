@@ -6,66 +6,73 @@
     <script src="js/report.js"></script>
     <script src="js/scroll.js"></script>
     <script src="report.JSON"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+          crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+            integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/chartist.min.css">
     <link rel="stylesheet" href="css/report.css">
 </head>
 
 <body>
-    <div style='background:#eee; width:100vw; height:3em;   position: fixed;'>
-        <div id='navigation'>
-            <div class="container">
-                //\\//\\ Analysys Report //\\//\\ &nbsp&nbsp&nbsp
-                <a href="#triplets">
-triplets
-</a>|
-                <a href="#doubles">
-doubles
-</a>|
-                <a href="#singles">
-singles
-</a>|
-                <a href="#top">
-top
-</a>
-            </div>
+<div style='background:#eee; width:100vw; height:3em;   position: fixed;'>
+    <div id='navigation'>
+        <div class="container">
+            //\\//\\ Analysys Report //\\//\\ &nbsp&nbsp&nbsp
+            <a href="#triplets">
+                triplets
+            </a>|
+            <a href="#doubles">
+                doubles
+            </a>|
+            <a href="#singles">
+                singles
+            </a>|
+            <a href="#top">
+                top
+            </a>
         </div>
     </div>
-    <div id="top" class="container">
-        <section>
-            <h3>Info</h3>
-            <ul>
-                <li>Charachters:
-                </li>
-                <li>Words:
-                </li>
-                <li>Scripts/Unicode Range:
-                </li>
-                <li>Source:
-                </li>
-                <li>Levels:
-                </li>
-                <li>Files:
-                </li>
-            </ul>
-        </section>
-        <section id='singles'>
-            <h2>Singles</h2>
-            <div class="ct-chart ct-golden-section" id="single">
-            </div>
-        </section>
+</div>
+<div id="top" class="container">
+    <section>
+        <h3>Info</h3>
+        <ul>
+            <li>Charachters:
+            </li>
+            <li>Words:
+            </li>
+            <li>Scripts/Unicode Range:
+            </li>
+            <li>Source:
+            </li>
+            <li>Levels:
+            </li>
+            <li>Files:
+            </li>
+        </ul>
+    </section>
+    <section id='singles'>
+        <h2>Singles</h2>
 
-        <section id='doubles'>
-            <h2>Doubles</h2>
-            <div class="ct-chart ct-golden-section" id="double">
-            </div>
-        </section>
+        <div class="ct-chart ct-golden-section" id="single">
+        </div>
+    </section>
 
-        <section id='triplets'>
-            <h2>Triplets</h2>
-            <div class="ct-chart ct-golden-section" id="triple">
-            </div>
-        </section>
-    </div>
+    <section id='doubles'>
+        <h2>Doubles</h2>
+
+        <div class="ct-chart ct-golden-section" id="double">
+        </div>
+    </section>
+
+    <section id='triplets'>
+        <h2>Triplets</h2>
+
+        <div class="ct-chart ct-golden-section" id="triple">
+        </div>
+    </section>
+</div>
 </body>
