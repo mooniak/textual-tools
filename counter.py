@@ -21,6 +21,7 @@ class Counter:
         self.ledgerTriple = {}
         self.unicodeRange = unicodeRange
         self.name = ""
+        self.source= ""
 
     def _count_characters(self, openfile):
         now = None

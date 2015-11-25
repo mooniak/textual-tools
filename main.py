@@ -10,6 +10,7 @@ def local_count(name, out=os.getcwd() + "/report.JSON"):
     file_list = folder_reader(name)
     count = Counter()
     count.name = name
+    count.source=name
     if file_list == None:
         count.name = name
         print(json.dumps(count))
@@ -24,6 +25,7 @@ def web_count(name, levels, out=None):
     file_list = folder_reader(folder)
     count = Counter()
     count.name = folder
+    count.source = name
     if file_list == None:
         return
     else:

@@ -26,5 +26,11 @@ def json_formulate(counter):
     out['ledgerSingle'] = ledgerSingle
     out['ledgerDouble'] = ledgerDouble
     out['ledgerTriple'] = ledgerTriple
+    out['charCount']=counter.charCount
+    out['charCountNoWhiteSpace']=counter.charCountNoWhiteSpace
+    out['wordCount']=counter.wordCount
+    out['unicodeRange']=counter.unicodeRange
+    out['name']=counter.name
+    out['source']=counter.source
 
     return "textReport("+json.dumps(out, ensure_ascii=False)+")"
