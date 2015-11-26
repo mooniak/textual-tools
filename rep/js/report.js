@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     var data = function (lables, vals) {
         var out = {
             labels: lables,
@@ -14,11 +14,19 @@
             reverseData: true,
             horizontalBars: true,
             fullWidth: true,
-            showArea: true,
-            height: ledger.length * 20 + 'px',
+            height: ledger.length * 30 + 'px',
+            axisX: {
+                position: 'start'
+            },
             axisY: {
                 offset: 70
-            }
+            }, 
+            chartPadding: {
+                right: 40
+            },
+            labelInterpolationFnc: function(value) {
+      return value + ' CHF'
+    },
         };
         return out
     };
@@ -29,9 +37,9 @@
     $('#range').html("range : " + unicodeRange);
     $('#source').html("source : <a href=" + source + "'>" + source + "</a>");
     $('#files').html("files :  <a href=" + name + "'>" + name + "</a>");
-    $('#single').css('height', ledgerSingleLables.length * 20);
-    $('#double').css('height', ledgerDoubleLables.length * 20);
-    $('#triple').css('height', ledgerTripleLables.length * 20);
+    $('#single').css('height', ledgerSingleLables.length * 30);
+    $('#double').css('height', ledgerDoubleLables.length * 30);
+    $('#triple').css('height', ledgerTripleLables.length * 30);
     new Chartist.Bar('#single', data(ledgerSingleLables, ledgerSingleVals), options(ledgerSingleLables));
     new Chartist.Bar('#double', data(ledgerDoubleLables, ledgerDoubleVals), options(ledgerDoubleLables));
     new Chartist.Bar('#triple', data(ledgerTripleLables, ledgerTripleVals), options(ledgerTripleLables));

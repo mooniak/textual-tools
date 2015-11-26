@@ -25,6 +25,7 @@
     padding-top: 10px;
 z-index: 100;
 }
+
 #navigation a {
 z-index: 100;
 }
@@ -42,6 +43,10 @@ section {
   stroke-width: 6px;
   /* Yes! Dashed bars! */
   stroke-dasharray: 0px;
-  /* Maybe you like round corners on your bars? */
-  stroke-linecap: round;
+}
+
+.ct-label {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #333333;
 }
