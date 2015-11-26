@@ -23,11 +23,11 @@
     right: 0;
     padding-left: 55px;
     padding-top: 10px;
-z-index: 100;
+    z-index: 100;
 }
 
 #navigation a {
-z-index: 100;
+    z-index: 100;
 }
 
 section {
@@ -37,12 +37,12 @@ section {
 }
 
 .ct-series-a .ct-bar {
-  /* Colour of your bars */
-  stroke: red;
-  /* The width of your bars */
-  stroke-width: 6px;
-  /* Yes! Dashed bars! */
-  stroke-dasharray: 0px;
+    /* Colour of your bars */
+    stroke: red;
+    /* The width of your bars */
+    stroke-width: 6px;
+    /* Yes! Dashed bars! */
+    stroke-dasharray: 0px;
 }
 
 .ct-label {
