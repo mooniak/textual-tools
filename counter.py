@@ -1,13 +1,12 @@
 #
-# counter.py v2.0.0
+# counter.py
 #
 # Copyright (c) 2015,
 # Mooniak <hello@mooniak.com>
 # Ayantha Randika <paarandika@gmail.com>
-# Improvements: https://github.com/mooniak/Frequency-Counter
+# Improvements: https://github.com/mooniak/textual-tools
 # Released under the GNU General Public License version 3 or later.
 # See accompanying LICENSE file for details.
-
 
 class Counter:
     punctuation = [' ', ',', '"', '\'', '.', '?', '!', '/', ':', '-', '%', '<', '>', '(', ')', '`']
@@ -15,13 +14,13 @@ class Counter:
     def __init__(self, unicodeRange=0):
         self.charCount = 0
         self.charCountNoWhiteSpace = 0
-        self.wordCount=0
+        self.wordCount = 0
         self.ledgerSingle = {}
         self.ledgerDouble = {}
         self.ledgerTriple = {}
         self.unicodeRange = unicodeRange
         self.name = ""
-        self.source= ""
+        self.source = ""
 
     def _count_characters(self, openfile):
         now = None
@@ -54,8 +53,8 @@ class Counter:
                 self.charCount += 1
                 if not char.isspace():
                     self.charCountNoWhiteSpace += 1
-                if char==" ":
-                    self.wordCount+=1
+                if char == " ":
+                    self.wordCount += 1
 
     def count(self, name):
         try:

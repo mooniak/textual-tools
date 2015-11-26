@@ -1,3 +1,13 @@
+#
+# scraper.py
+#
+# Copyright (c) 2015,
+# Mooniak <hello@mooniak.com>
+# Ayantha Randika <paarandika@gmail.com>
+# Improvements: https://github.com/mooniak/textual-tools
+# Released under the GNU General Public License version 3 or later.
+# See accompanying LICENSE file for details.
+
 from urllib.parse import urlparse, urljoin
 from urllib.request import Request, urlopen
 import os

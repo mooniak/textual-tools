@@ -1,3 +1,13 @@
+#
+# main.py
+#
+# Copyright (c) 2015,
+# Mooniak <hello@mooniak.com>
+# Ayantha Randika <paarandika@gmail.com>
+# Improvements: https://github.com/mooniak/textual-tools
+# Released under the GNU General Public License version 3 or later.
+# See accompanying LICENSE file for details.
+
 import sys
 import json
 
@@ -6,11 +16,12 @@ from counter import *
 from scraper import scrape
 from jsonFormulate import json_formulate
 
+
 def local_count(name, out=os.getcwd() + "/report.JSON"):
     file_list = folder_reader(name)
     count = Counter()
     count.name = name
-    count.source=name
+    count.source = name
     if file_list == None:
         count.name = name
         print(json.dumps(count))
